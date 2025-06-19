@@ -214,10 +214,14 @@
 
     // Fetch Location
     try {
-      const res = await fetch('https://ip-api.com/json');
+      const res = await fetch('https://ipinfo.io/json');
       const data = await res.json();
-      if (data.status === 'success') {
+      if (data.city && data.country) {
         location = `${data.city}, ${data.country}`;
+      } else if (data.region && data.country) {
+        location = `${data.region}, ${data.country}`;
+      } else if (data.country) {
+        location = data.country;
       } else {
         location = 'unknown';
       }
