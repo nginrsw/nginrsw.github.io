@@ -55,7 +55,7 @@ This project uses a dynamic content system. You don't need to modify any Svelte 
    - Set `base` to your repo name, for example:
      ```js
      export default defineConfig({
-       base: '/nginr-portfolio/', // change to your repo name
+       base: '/', // change to your repo name
        plugins: [svelte()],
      })
      ```
