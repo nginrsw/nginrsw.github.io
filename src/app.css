@@ -11,7 +11,7 @@
 
 body {
   background-color: #000000;
-  color: #00ff00;
+  color: #15f4ee;
   font-family: '0xProto', monospace;
 }
 
@@ -45,6 +45,43 @@ body {
   color: #00ff00;
   font-family: inherit;
   caret-shape: block;
+}
+
+/* Styles for the article reading view */
+.article-view {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif; /* Use a more readable font for articles */
+  color: #e0e0e0;
+  line-height: 1.7;
+}
+
+.article-content h1, .article-content h2 {
+  color: var(--terminal-accent);
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.article-content a {
+  color: var(--terminal-link);
+  text-decoration: underline;
+}
+
+.article-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  text-align: center;
+  font-style: italic;
+  color: #888;
 }
 
 ::selection {

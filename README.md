@@ -1,4 +1,4 @@
-# Nginr Portfolio
+# Nginr Terminal
 
 A personal portfolio web app with a terminal-inspired interface, built using Svelte, Vite, and Tailwind CSS.
 
@@ -7,6 +7,7 @@ A personal portfolio web app with a terminal-inspired interface, built using Sve
 - Simulated file system and command history
 - Custom fonts (Nerd Fonts) and retro terminal theme
 - Live clock and location info in the header
+- **Dynamic Content**: Add or edit projects, skills, and blog posts simply by creating Markdown files. The terminal automatically reflects the changes.
 - Easily extensible: add your own commands, files, or directories
 
 ## Getting Started
@@ -31,6 +32,22 @@ A personal portfolio web app with a terminal-inspired interface, built using Sve
    ```bash
    npm run preview
    ```
+
+## Managing Content
+
+This project uses a dynamic content system. You don't need to modify any Svelte code to add new entries. Simply add or edit Markdown (`.md`) files in the `src/content/` directory.
+
+- **To Add a Blog Post**:
+  - Create a new `.md` file in `src/content/blog/`.
+  - It will automatically appear in the terminal with a `.blog` extension (e.g., `my-post.md` shows as `my-post.blog`).
+
+- **To Add a Project**:
+  - Create a new `.md` file in `src/content/projects/`.
+  - It will appear in the terminal with a `.md` extension.
+
+- **To Add a Skill**:
+  - Create a new `.md` file in `src/content/skills/`.
+  - It will appear in the terminal with no extension (e.g., `Svelte.md` shows as `Svelte`).
 
 ## Deploy to GitHub Pages
 
@@ -80,15 +97,15 @@ A personal portfolio web app with a terminal-inspired interface, built using Sve
      `https://<username>.github.io/<repo-name>/`
 
 ## Project Structure
-- `src/` — Svelte components, main logic, and styles
-- `public/` — Static assets (fonts, images)
-- `DEVELOPER.md` — Technical documentation for developers
-- `CONTRIBUTING.md` — Guide for forking and contributing
+- `src/content/` — All modular content (about, projects, skills, blog) lives here as Markdown files.
+- `src/lib/` — Core application logic, including the main `Terminal.svelte` component and the `fileSystem.js` utility.
+- `public/` — Static assets (fonts, images).
+- `DEVELOPER.md` — Technical documentation for developers.
 
 ## Customization
-- Add or edit terminal commands in `src/lib/Terminal.svelte`
-- Change styles in `src/app.css` or via Tailwind
-- Add new fonts to `public/fonts/`
+- **Add Content**: To add a new project, skill, or blog post, simply create a new `.md` file in the corresponding directory inside `src/content/`. The file system will update automatically.
+- **Edit Commands**: Modify terminal commands in `src/lib/Terminal.svelte`.
+- **Change Styles**: Adjust styles in `src/app.css` or via Tailwind.
 
 ## Recommended IDE Setup
 - [VS Code](https://code.visualstudio.com/) + [Svelte Extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
@@ -98,4 +115,4 @@ A personal portfolio web app with a terminal-inspired interface, built using Sve
 - The rest of the code is licensed under the MIT License, See [`LICENSE`](./LICENSE) in the root of this repository.
 
 ---
-For more details, see [`DEVELOPER.md`](./DEVELOPER.md) and [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+For more technical details, see [`DEVELOPER.md`](./DEVELOPER.md).
